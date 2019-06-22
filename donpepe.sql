@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2018 a las 18:50:53
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.6.24
+-- Tiempo de generación: 22-06-2019 a las 17:52:32
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `donpepe`
 --
-CREATE DATABASE IF NOT EXISTS `donpepe` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `donpepe`;
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `clave`, `nombre`, `email`) VALUES
-(1, 'eva', '81dc9bdb52d04dc20036dbd8313ed055', 'Eva Ferreira', 'adsf@sdf.com');
+(1, 'eva', '81dc9bdb52d04dc20036dbd8313ed055', 'Eva Ferreira', 'adsf@sdf.com'),
+(2, 'belu.taboada', 'f3e8b29516545a898bf78f79198bf18c', 'BelÃ©n Taboada', 'belut@sarasa'),
+(3, 'Mile', '4dee4aa499bb15231ec9c6ff3f5f68d7', 'Milena Taboada', 'miletaboada@sarasa');
 
 --
 -- Índices para tablas volcadas
@@ -124,16 +126,20 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `libros`
   MODIFY `id_libro` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT de la tabla `ratings`
 --
 ALTER TABLE `ratings`
   MODIFY `id_rating` int(5) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
